@@ -9,6 +9,11 @@
     <b>{!! Form::label('email', __('Email')) !!}</b>
     <p>{{ $user->email }}</p>
 </div>
+<!-- Email Field -->
+<div class="form-group">
+    <b>{!! Form::label('account_number', __('Account Number')) !!}</b>
+    <p>{{ $user->account_number }}</p>
+</div>
 
 
 <!-- Phone Field -->

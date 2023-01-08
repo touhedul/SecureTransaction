@@ -81,7 +81,7 @@
                 </span>
             </div>
             <div class="app-header__content">
-                <div class="app-header-left">
+                {{-- <div class="app-header-left">
                     <div class="search-wrapper">
                         <div class="input-holder">
                             <input id="tags" type="text" class="search-input" placeholder="{{ __('Type to search') }}">
@@ -107,7 +107,6 @@
                             @endcan @can('setting-view')
                             <li class="dropdown nav-item">
                                 <a href="{{ route('admin.settings.index') }}" class="nav-link">
-                                    {{-- <i class="nav-link-icon fa fa-cog"></i> --}}
 
                                     <i class="nav-link-icon fa fa-cog fa-w-16 fa-spin fa-x"></i>
                                     {{ __('Settings') }}
@@ -115,7 +114,7 @@
                             </li>
                         @endcan
                     </ul>
-                </div>
+                </div> --}}
                 @php
                     $notifications = App\Models\Notification::where('read_status', 0)
                         ->latest()
@@ -126,7 +125,7 @@
                     <div class="header-btn-lg pr-0">
                         <div class="widget-content p-0">
                             <div class="widget-content-wrapper">
-                                <div class="widget-content-left">
+                                {{-- <div class="widget-content-left">
                                     <div class="btn-group">
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                             class="p-0 btn">
@@ -169,8 +168,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="widget-content-left">
+                                </div> --}}
+                                {{-- <div class="widget-content-left">
                                     <div class="btn-group">
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                             class="p-0 btn">
@@ -192,7 +191,7 @@
                                             @endforeach
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="widget-content-left">
                                     <div class="btn-group">
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"

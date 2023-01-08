@@ -44,14 +44,13 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
                         @guest
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
+                        </li> --}}
                         @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
@@ -61,11 +60,11 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 @if(Auth::user()->hasRole('user'))
-                                <a class="dropdown-item" href="{{route('user.profile.view')}}">{{__('Profile')}}</a>
-                                <a class="dropdown-item" href="{{route('user.change.password')}}">{{__('Change Password')}}</a>
+                                {{-- <a class="dropdown-item" href="{{route('user.profile.view')}}">{{__('Profile')}}</a>
+                                <a class="dropdown-item" href="{{route('user.change.password')}}">{{__('Change Password')}}</a> --}}
                                 @else
                                 <a class="dropdown-item" href="{{route('admin.dashboard')}}">{{__('Dashboard')}}</a>
-                                <a class="dropdown-item" href="{{route('admin.change.password')}}">{{__('Change Password')}}</a>
+                                {{-- <a class="dropdown-item" href="{{route('admin.change.password')}}">{{__('Change Password')}}</a> --}}
                                 @endif
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -79,7 +78,7 @@
                             </div>
                         </li>
                         @endguest
-                        <li class="nav-item dropdown">
+                        {{-- <li class="nav-item dropdown">
                             <a id="navbarDropdownLang" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ __('Language') }} <span class="caret"></span>
@@ -90,17 +89,16 @@
                                     $languages = App\Models\Language::where('status',1)->get();
                                 @endphp
                                 @foreach ($languages as $language)
-                                {{-- <a class="dropdown-item" href="#">{{ Session::get('locale') }}</a> --}}
                                 <a class="dropdown-item" href="{{route('changeLanguage',$language->code)}}">{{$language->name}}</a>
                                 @endforeach
                             </div>
-                        </li>
-                        <li class="nav-item">
+                        </li> --}}
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="{{ route('contact') }}">{{ __('Contact') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('about') }}">{{ __('About') }}</a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
             </div>

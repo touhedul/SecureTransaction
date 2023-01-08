@@ -10,6 +10,16 @@
     {!! Form::email('email', null, ['class' => 'form-control','required','maxlength' => 191]) !!}
 </div>
 
+@php
+    $accountNumber = date('Ymd').rand(1000,9999);
+@endphp
+
+<!-- Email Field -->
+<div class="form-group">
+    {!! Form::label('account_number', __('Account Number')) !!}<span style="color: red">*</span>
+    {!! Form::text('account_number', $accountNumber, ['class' => 'form-control','required','maxlength' => 191]) !!}
+</div>
+
 <!-- Password Field -->
 <div class="form-group">
     {!! Form::label('password', __('Password')) !!}<span style="color: red">*</span>

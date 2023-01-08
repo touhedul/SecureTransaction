@@ -47,6 +47,11 @@ class LoginController extends Controller
         return Socialite::driver($provider)->redirect();
     }
 
+    public function username()
+    {
+        return 'account_number';
+    }
+
     protected function authenticated(Request $request, $user)
     {
 

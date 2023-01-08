@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('account_number')->unique()->nullable();
             $table->string('password')->nullable();
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
@@ -67,11 +68,12 @@ class CreateUsersTable extends Migration
                 'remember_token' => rand(100,1000000),
             ]
         );
-       
+
         User::create(
             [
                 'name' => 'user-a',
                 'email' => 'a@a.com',
+                'account_number' => 1,
                 'password' => bcrypt('12345678'),
                 'phone' => '01833996321',
                 'address' => 'Demo Address',
@@ -84,6 +86,7 @@ class CreateUsersTable extends Migration
             [
                 'name' => 'user-b',
                 'email' => 'b@b.com',
+                'account_number' => 2,
                 'password' => bcrypt('12345678'),
                 'phone' => '01833996321',
                 'address' => 'Demo Address',
@@ -96,6 +99,7 @@ class CreateUsersTable extends Migration
             [
                 'name' => 'user-ac',
                 'email' => 'c@c.com',
+                'account_number' => 3,
                 'password' => bcrypt('12345678'),
                 'phone' => '01833996321',
                 'address' => 'Demo Address',

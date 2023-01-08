@@ -24,7 +24,7 @@
 @endcan
 
 {{-- Contacts --}}
-@can('contact-view')
+{{-- @can('contact-view')
 @if(Route::has('admin.contacts'))
 <li class="">
     <a href="{{route('admin.contacts')}}" class="{{ request()->route()->getName() == 'admin.contacts' ? 'mm-active' : ''}}">
@@ -33,7 +33,7 @@
     </a>
 </li>
 @endif
-@endcan
+@endcan --}}
 {{-- Feedbacks --}}
 @can('feedback-view')
 @if(Route::has('admin.feedbacks'))
@@ -45,10 +45,10 @@
 </li>
 @endif
 @endcan
-<li class="app-sidebar__heading">{{ __('System Menu') }}</li>
+{{-- <li class="app-sidebar__heading">{{ __('System Menu') }}</li> --}}
 
 {{-- Setting --}}
-<li>
+{{-- <li>
     <a href="#">
         <i class="metismenu-icon pe-7s-settings"></i>
         {{ __('Settings') }}
@@ -79,7 +79,6 @@
             </a>
         </li>
         @endcan
-        {{-- Backup --}}
         @can('backup')
         <li class="{{ request()->route()->getName() == 'admin.backups.index' ? 'mm-active' : '' }}">
             <a href="{{route('admin.backups.index')}}">
@@ -115,11 +114,11 @@
         </li>
         @endcan
     </ul>
-</li>
+</li> --}}
 
 
 
-@can('log-activity-view')
+{{-- @can('log-activity-view')
     <li>
     <a href="#">
         <i class="metismenu-icon pe-7s-diamond"></i>
@@ -176,9 +175,8 @@
         @endcan
     </ul>
 </li>
-@endif
-{{-- @endcan --}}
-@if(auth()->user()->can('Page-view') || auth()->user()->can('Content-view'))
+@endif --}}
+{{-- @if(auth()->user()->can('Page-view') || auth()->user()->can('Content-view'))
 <li>
     <a href="#">
         <i class="metismenu-icon pe-7s-album"></i>
@@ -205,7 +203,7 @@
         @endcan
     </ul>
 </li>
-@endIf
+@endIf --}}
 
 
 

@@ -56,8 +56,8 @@ class UserDataTable extends DataTable
             // 'Sl',
             ['data'=>'name','title'=>__('Name')],
             ['data'=>'email','title'=>__('Email')],
+            ['data'=>'account_number','title'=>__('Account Number')],
             ['data'=>'phone','title'=>__('Phone')],
-            ['data'=>'address','title'=>__('Address')],
             ['data'=>'status','title'=>__('Status')],
             // 'image'
         ];

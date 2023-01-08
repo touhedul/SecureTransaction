@@ -10,6 +10,11 @@
     {!! Form::email('email', null, ['class' => 'form-control','required','maxlength' => 191]) !!}
 </div>
 
+<!-- Name Field -->
+<div class="form-group">
+    {!! Form::label('account_number', __('Account Number')) !!}<span style="color: red">*</span>
+    {!! Form::text('account_number', null, ['class' => 'form-control','required','maxlength' => 191]) !!}
+</div>
 <!-- Password Field -->
 <div class="form-group">
     {!! Form::label('password', __('Password')) !!}
