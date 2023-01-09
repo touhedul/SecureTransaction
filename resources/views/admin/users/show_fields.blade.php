@@ -14,6 +14,10 @@
     <b>{!! Form::label('account_number', __('Account Number')) !!}</b>
     <p>{{ $user->account_number }}</p>
 </div>
+<div class="form-group">
+    <b>{!! Form::label('account_number', __('Balance')) !!}</b>
+    <p>{{ $user->balance }}</p>
+</div>
 
 
 <!-- Phone Field -->
@@ -55,3 +59,25 @@
     <b>{!! Form::label('updated_at', __('Updated At')) !!}</b>
     <p>{{ $user->updated_at->toFormattedDateString() }}</p>
 </div>
+<br>
+<h3>Transaction History</h3>
+<table class="table table-striped">
+    <tr>
+        <th>Sl.</th>
+        <th>Amount</th>
+        <th>Date</th>
+    </tr>
+    @forelse ($transactions as $transaction)
+    <tr>
+        <td>{{$loop->index+1}}</td>
+        <td>{{$transaction->amount}}</td>
+        <td>{{$transaction->created_at->toFormattedDateString()}}</td>
+    </tr>
+    @empty
+    <tr>
+        <td></td>
+        <td>No Data Found</td>
+        <td></td>
+    </tr>
+    @endforelse
+</table>

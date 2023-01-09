@@ -40,6 +40,7 @@ Route::group(['middleware' => ['auth', 'preventBackHistory','notUser','localaiza
 
         // Dashboard
         Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+        Route::get('transactions', [DashboardController::class, 'transactions'])->name('transactions');
 
         //change password
         Route::get('change-password', [AdminProfileController::class, 'changePasswordView'])->name('change.password');

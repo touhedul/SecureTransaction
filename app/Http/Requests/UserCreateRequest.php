@@ -30,6 +30,7 @@ class UserCreateRequest extends FormRequest
             'email' => 'required|email|max:191|unique:users',
             'account_number' => 'required|max:191|unique:users',
             'password' => 'required|string|min:8|max:191',
+            'balance' => 'required'
         ]);
         return $rules;
     }

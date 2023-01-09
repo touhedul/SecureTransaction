@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('address')->nullable();
             $table->string('image')->nullable();
             $table->boolean('status')->default(1);
+            $table->integer('balance')->default(1000);
             $table->string('provider')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
@@ -48,6 +49,7 @@ class CreateUsersTable extends Migration
             [
                 'name' => 'Admin',
                 'email' => 'admin@admin.com',
+                'account_number' => 'admin@admin.com',
                 'password' => bcrypt('456456456'),
                 'phone' => '01833996321',
                 'address' => 'Demo Address',

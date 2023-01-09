@@ -9,6 +9,7 @@
         {{ __('Dashboard') }}
     </a>
 </li>
+
 @endcan
 <li class="app-sidebar__heading">{{ __('Application  MENU') }}</li>
 {{-- Users --}}
@@ -18,6 +19,12 @@
     <a href="{{route('admin.users.index')}}" class="{{ Request::is('rt-admin/users**') ? 'mm-active' : '' }}">
         <i class="metismenu-icon pe-7s-users"></i>
         {{ __('Users') }}
+    </a>
+</li>
+<li class="">
+    <a href="{{route('admin.transactions')}}" class="{{ request()->route()->getName() == 'admin.transactions' ? 'mm-active' : ''}}">
+        <i class="metismenu-icon pe-7s-wallet"></i>
+        {{ __('Transactions') }}
     </a>
 </li>
 @endif

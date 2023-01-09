@@ -102,7 +102,7 @@
                                     <div class="widget-heading">{{ __('Today\'s Transaction') }}</div>
                                 </div>
                                 <div class="widget-content-right">
-                                    <div class="widget-numbers text-white"><span> {{$monthOrder ?? '411'}}</span></div>
+                                    <div class="widget-numbers text-white"><span> {{$todayTransaction ?? '411'}}</span></div>
                                 </div>
                             </div>
                         </div>
@@ -131,7 +131,7 @@
                                     <div class="widget-heading">This Week Transaction</div>
                                 </div>
                                 <div class="widget-content-right">
-                                    <div class="widget-numbers text-white"><span>{{$weekOrder ?? '3510'}}</span></div>
+                                    <div class="widget-numbers text-white"><span>{{$weekTransaction ?? '3510'}}</span></div>
                                 </div>
                             </div>
                         </div>
@@ -162,7 +162,7 @@
                                         <div class="widget-heading"> This Month Transaction</div>
                                     </div>
                                     <div class="widget-content-right">
-                                        <div class="widget-numbers text-success">{{$monthOrder ?? '1505'}}</div>
+                                        <div class="widget-numbers text-success">{{$monthTransaction ?? '1505'}}</div>
                                     </div>
                                 </div>
                             </div>
@@ -193,7 +193,7 @@
                                     <div class="widget-heading">This Year Transaction</div>
                                 </div>
                                 <div class="widget-content-right">
-                                    <div class="widget-numbers text-white"><span>{{$yearOrder ?? '99169'}}</span></div>
+                                    <div class="widget-numbers text-white"><span>{{$yearTransaction ?? '99169'}}</span></div>
                                 </div>
                             </div>
                         </div>

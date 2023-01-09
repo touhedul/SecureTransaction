@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
@@ -14,7 +14,37 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                        <h3>Total available amount : {{ auth()->user()->balance }}</h3>
+                        <br>
+                        <form action="{{route('user.cashout')}}" method="POST">
+                            @csrf
+                            <input placeholder="Enter amount for cashout" type="number" name="amount" max="{{ auth()->user()->balance }}" min="10" class="form-control">
+                            <br>
+                            <button type="submit" class="btn btn-success">Cashout</button>
+                        </form>
+
+                        <br>
+
+                        <table class="table table-striped">
+                            <tr>
+                                <th>Sl.</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                            </tr>
+                            @forelse ($transactions as $transaction)
+                            <tr>
+                                <td>{{$loop->index+1}}</td>
+                                <td>{{$transaction->amount}}</td>
+                                <td>{{$transaction->created_at->toFormattedDateString()}}</td>
+                            </tr>
+                            @empty
+                            <tr>
+                                <td></td>
+                                <td>No Data Found</td>
+                                <td></td>
+                            </tr>
+                            @endforelse
+                        </table>
                 </div>
             </div>
         </div>

@@ -32,6 +32,7 @@ class UserUpdateRequest extends FormRequest
             'email' => 'unique:users,email,' . $this->user,
             'account_number' => 'unique:users,account_number,' . $this->user,
             'password' => 'nullable|string|min:8|max:191',
+            'balance' => 'required'
         ]);
         // $rules = array_merge($rules,['file' => 'nullable|mimes:jpg,png,jpeg,gif,doc,docx,pdf,ppt,pptx,xls,xlsx|max:10000']);
         return $rules;

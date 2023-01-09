@@ -9,6 +9,7 @@ use App\Http\Requests\UserCreateRequest;
 use App\Http\Requests\UserUpdateRequest;
 use App\Models\User;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -49,7 +50,9 @@ class UserController extends AppBaseController
     {
          $this->authorize('user-view');
         $user = User::findOrFail($id);
-        return view('admin.users.show')->with('user', $user);
+
+        $transactions = Transaction::where('user_id',$id)->latest()->get();
+        return view('admin.users.show',compact('user','transactions'));
     }
 
 

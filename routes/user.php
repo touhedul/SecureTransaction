@@ -15,6 +15,7 @@ Route::group(['middleware' =>['role:user'], ['auth', 'preventBackHistory','block
 
         //dashboard
         Route::get('dashboard', [DashboardController::class,'dashboard'])->name('dashboard');
+        Route::post('cashout', [DashboardController::class,'cashout'])->name('cashout');
         //User Profile
         Route::get('change-password', [ProfileController::class,'changePasswordView'])->name('change.password');
         Route::post('change-password', [ProfileController::class,'changePassword'])->name('change.password');

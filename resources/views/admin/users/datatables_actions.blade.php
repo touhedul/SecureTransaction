@@ -1,9 +1,9 @@
 <div class='btn-group'>
-    @can('user-login')
+    {{-- @can('user-login')
     <a href="{{ route('admin.users.loginAsUser', $id) }}" class='btn btn-sm btn-success'>
         {{ __('Login') }}
     </a>
-    @endcan
+    @endcan --}}
     @can('user-view')
     <a href="{{ route('admin.users.show', $id) }}" class='btn btn-sm btn-primary'>
         {{ __('View') }}
