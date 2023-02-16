@@ -18,6 +18,10 @@
     <b>{!! Form::label('account_number', __('Balance')) !!}</b>
     <p>{{ $user->balance }}</p>
 </div>
+<div class="form-group">
+    <b>{!! Form::label('account_number', __('Mac Address')) !!}</b>
+    <p>{{ $user->mac_address }}</p>
+</div>
 
 
 <!-- Phone Field -->

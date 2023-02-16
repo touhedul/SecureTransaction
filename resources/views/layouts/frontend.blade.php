@@ -111,6 +111,16 @@
         </main>
         </div>
     </div>
+     <!-- Jquery -->
+     <script src="{{ asset('admin/assets/scripts/jquery.min.js') }}"></script>
+     <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
+    @yield('script')
 </body>
 
 </html>

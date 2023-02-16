@@ -71,6 +71,7 @@ class Kernel extends HttpKernel
         'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
         'notUser' => \App\Http\Middleware\NotUser::class,
         'localaization' => \App\Http\Middleware\Localization::class,
+        'qrcode' => \App\Http\Middleware\QRCode::class,
     ];
 
     /**

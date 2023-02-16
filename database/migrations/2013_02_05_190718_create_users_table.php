@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
             $table->boolean('status')->default(1);
             $table->integer('balance')->default(1000);
             $table->string('provider')->nullable();
+            $table->string('mac_address')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
@@ -80,6 +81,7 @@ class CreateUsersTable extends Migration
                 'phone' => '01833996321',
                 'address' => 'Demo Address',
                 'image' => 'user.jpg',
+                'mac_address' => 'a',
                 'email_verified_at' => now(),
                 'remember_token' => rand(100,1000000),
             ]
@@ -93,6 +95,7 @@ class CreateUsersTable extends Migration
                 'phone' => '01833996321',
                 'address' => 'Demo Address',
                 'image' => 'user.jpg',
+                'mac_address' => 'b',
                 'email_verified_at' => now(),
                 'remember_token' => rand(100,1000000),
             ]
@@ -106,6 +109,7 @@ class CreateUsersTable extends Migration
                 'phone' => '01833996321',
                 'address' => 'Demo Address',
                 'image' => 'user.jpg',
+                'mac_address' => 'c',
                 'email_verified_at' => now(),
                 'remember_token' => rand(100,1000000),
             ]

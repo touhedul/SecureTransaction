@@ -17,6 +17,9 @@ class IndexController extends Controller
         // (new VisitorService())->checkBlockIp();
         // (new VisitorService())->saveVisitorInfo();
         // return redirect()->route('login');
+        if(auth()->user()){
+            return redirect()->route('user.dashboard');
+        }
         return view('frontend.index');
     }
 

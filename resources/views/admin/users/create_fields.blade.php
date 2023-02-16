@@ -21,6 +21,11 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('mac_address', __('Mac Address')) !!}<span style="color: red">*</span>
+    {!! Form::text('mac_address', null, ['class' => 'form-control','required','maxlength' => 191]) !!}
+</div>
+
+<div class="form-group">
     {!! Form::label('balance', __('Initial balance')) !!}<span style="color: red">*</span>
     {!! Form::number('balance', 1000, ['class' => 'form-control','required','maxlength' => 191]) !!}
 </div>

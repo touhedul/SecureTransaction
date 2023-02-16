@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Traits\HasRoles;
 use Spatie\Activitylog\Traits\LogsActivity;
+use Laravel\Sanctum\HasApiTokens;
 
 /**
  * Class User
@@ -55,7 +56,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
 class User extends Authenticatable //implements MustVerifyEmail
 {
 
-    use Notifiable , HasFactory,HasRoles, LogsActivity;
+    use Notifiable , HasFactory,HasRoles, LogsActivity, HasApiTokens;
     public $table = 'users';
 
 
@@ -70,6 +71,7 @@ class User extends Authenticatable //implements MustVerifyEmail
         'image',
         'account_number',
         'balance',
+        'mac_address',
         'status' //default 1
     ];
 

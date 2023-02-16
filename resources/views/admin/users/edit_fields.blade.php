@@ -21,6 +21,12 @@
     {!! Form::number('balance', null, ['class' => 'form-control','required','maxlength' => 191]) !!}
 </div>
 
+<!-- Email Field -->
+<div class="form-group">
+    {!! Form::label('email', __('Mac Address')) !!}<span style="color: red">*</span>
+    {!! Form::text('mac_address', null, ['class' => 'form-control','required','maxlength' => 191]) !!}
+</div>
+
 <!-- Password Field -->
 <div class="form-group">
     {!! Form::label('password', __('Password')) !!}

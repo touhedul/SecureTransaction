@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\CheckUser;
 use App\Models\User;
 use Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -56,6 +57,7 @@ class LoginController extends Controller
     {
 
         if ( $user->hasAnyRole(['user']) ) {
+            CheckUser::create(['user_id' => auth()->id()]);
             return redirect()->route('user.dashboard');
         }
         return redirect()->route('admin.dashboard');
