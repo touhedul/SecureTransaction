@@ -31,7 +31,7 @@
 
                     <form action="" method="POST">
 
-                        <a id="sig" target="_blank" class="btn btn-primary" href="http://skoder.co/ams/educo.php" onclick="device_unit_subscribe()">Get
+                        <a id="sig" target="_blank" class="btn btn-primary" onclick="device_unit_subscribe()">Get
                             Signature</a><br>
                         @csrf
                         <div class="form-group"><br>
