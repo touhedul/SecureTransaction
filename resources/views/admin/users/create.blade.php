@@ -31,7 +31,7 @@
 
                         <form action="" method="POST">
 
-                            <a id="sig" target="_blank" class="btn btn-primary" href="http://stellar.solutionpi.com" onclick="device_unit_subscribe()">Get
+                            <a id="sig" target="_blank" class="btn btn-primary" href="http://stellar.solutionpi.com/stellar/akhlak.php" onclick="device_unit_subscribe()">Get
                                 Signature</a><br>
                             @csrf
                             <input type="text" class="form-control" name="manuallyCard" id="manuallyCard" />
