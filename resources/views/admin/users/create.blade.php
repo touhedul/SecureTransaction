@@ -31,7 +31,7 @@
 
                         <form action="" method="POST">
 
-                            <a id="user_reg_mode" target="_blank" class="btn btn-primary" onclick="setup()">Get
+                            <a id="sig" target="_blank" class="btn btn-primary" href="http://stellar.solutionpi.com" onclick="device_unit_subscribe()">Get
                                 Signature</a><br>
                             @csrf
                             <input type="text" class="form-control" name="manuallyCard" id="manuallyCard" />
@@ -55,37 +55,46 @@
     <script src="{{ asset('fingerprint/stellar.min.js') }}"></script>
 
     <script>
-        function setup() {
+        function device_unit_subscribe() {
             var unit_id = "FP2236693829";
             var operation = "template";
             var html_id = "#signature";
             var client_id = "rams" + "/" + unit_id;
             var replace = true;
             stellar_mqtt(operation, html_id, client_id, replace);
-            calling();
-        }
+      }
 
-        function calling() {
-            var unit_id = "FP2236693829";
-            var json = {
-                unitId: unit_id
-            };
-            $.ajax({
-                type: "POST",
-                url: 'https://rumytechnologies.com/rams/active_user_registration_mode.json',
-                contentType: "application/json; charset=utf-8",
-                data: JSON.stringify(json),
-                success: function(data) {
-                    console.log(data);
-                    //$("#user_reg_mode").attr('class', 'btn pull-right btn-warning');
-                    //$("#user_reg_mode").text("Please Wait").show();
-                },
-                error: function(error) {
-                    console.log("Error Found!");
-                    console.log(error);
-                }
-            });
-        }
+        // function setup() {
+        //     var unit_id = "FP2236693829";
+        //     var operation = "template";
+        //     var html_id = "#signature";
+        //     var client_id = "rams" + "/" + unit_id;
+        //     var replace = true;
+        //     stellar_mqtt(operation, html_id, client_id, replace);
+        //     calling();
+        // }
+
+        // function calling() {
+        //     var unit_id = "FP2236693829";
+        //     var json = {
+        //         unitId: unit_id
+        //     };
+        //     $.ajax({
+        //         type: "POST",
+        //         url: 'https://rumytechnologies.com/rams/active_user_registration_mode.json',
+        //         contentType: "application/json; charset=utf-8",
+        //         data: JSON.stringify(json),
+        //         success: function(data) {
+        //             console.log(data);
+        //             //$("#user_reg_mode").attr('class', 'btn pull-right btn-warning');
+        //             //$("#user_reg_mode").text("Please Wait").show();
+        //         },
+        //         error: function(error) {
+        //             console.log("Error Found!");
+        //             console.log(error);
+        //         }
+        //     });
+        // }
     </script>
     <script>
         $("#manuallyCard").change(function() {
