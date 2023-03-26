@@ -62,8 +62,37 @@
             var replace = true;
             stellar_mqtt(operation, html_id, client_id, replace);
         }
+
         $("#user_reg_mode").click(function() {
-            alert('dlkfj');
+            alert('hello');
+            var unit_id = "FP2236693829";
+            var json = {
+                unitId: unit_id
+            };
+            $.ajax({
+                type: "POST",
+                url: 'https://rumytechnologies.com/rams/active_user_registration_mode.json',
+                dataType: 'jsonp',
+                CORS: true,
+                contentType: 'application/json',
+                secure: true,
+                data: JSON.stringify(json),
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                },
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("Authorization", "Basic " + btoa(""));
+                },
+                success: function(data) {
+                    console.log(data);
+                },
+                error:function(error){
+                    console.log(error);
+                }
+            })
+        });
+
+        $("#user_reg_modea").click(function() {
             var unit_id = "FP2236693829";
             var json = {
                 unitId: unit_id
