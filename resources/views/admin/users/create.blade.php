@@ -31,9 +31,10 @@
 
                         <form action="" method="POST">
 
-                            <a id="user_reg_mode" target="_blank" class="btn btn-primary">Get
+                            <a id="user_reg_mode" target="_blank" class="btn btn-primary" onclick="setup()">Get
                                 Signature</a><br>
                             @csrf
+                            <input type="text" class="form-control" name="manuallyCard" id="manuallyCard" />
                             <div class="form-group"><br>
                                 <textarea readonly name="signature" type="text" id="signature" class="form-control" value="" required>{{ old('signature') }}</textarea>
                             </div>
@@ -54,45 +55,17 @@
     <script src="{{ asset('fingerprint/stellar.min.js') }}"></script>
 
     <script>
-        function device_unit_subscribe() {
+        function setup() {
             var unit_id = "FP2236693829";
             var operation = "template";
             var html_id = "#signature";
             var client_id = "rams" + "/" + unit_id;
             var replace = true;
             stellar_mqtt(operation, html_id, client_id, replace);
+            calling();
         }
 
-        $("#user_reg_mode").click(function() {
-            alert('hello');
-            var unit_id = "FP2236693829";
-            var json = {
-                unitId: unit_id
-            };
-            $.ajax({
-                type: "POST",
-                url: 'https://rumytechnologies.com/rams/active_user_registration_mode.json',
-                dataType: 'jsonp',
-                CORS: true,
-                contentType: 'application/json',
-                secure: true,
-                data: JSON.stringify(json),
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                },
-                beforeSend: function(xhr) {
-                    xhr.setRequestHeader("Authorization", "Basic " + btoa(""));
-                },
-                success: function(data) {
-                    console.log(data);
-                },
-                error:function(error){
-                    console.log(error);
-                }
-            })
-        });
-
-        $("#user_reg_modea").click(function() {
+        function calling() {
             var unit_id = "FP2236693829";
             var json = {
                 unitId: unit_id
@@ -112,7 +85,7 @@
                     console.log(error);
                 }
             });
-        });
+        }
     </script>
     <script>
         $("#manuallyCard").change(function() {
