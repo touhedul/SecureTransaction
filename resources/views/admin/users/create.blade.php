@@ -64,7 +64,7 @@
         }
         $("#user_reg_mode").click(function() {
             alert('dlkfj');
-            var unit_id = $("#unit_id").val();
+            var unit_id = "FP2236693829";
             var json = {
                 unitId: unit_id
             };
@@ -74,11 +74,13 @@
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify(json),
                 success: function(data) {
+                    console.log(data);
                     //$("#user_reg_mode").attr('class', 'btn pull-right btn-warning');
                     //$("#user_reg_mode").text("Please Wait").show();
                 },
-                error: function(xhr, ajaxOptions, thrownError) {
+                error: function(error) {
                     console.log("Error Found!");
+                    console.log(error);
                 }
             });
         });
