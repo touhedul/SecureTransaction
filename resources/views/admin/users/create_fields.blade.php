@@ -48,6 +48,9 @@
     {!! Form::text('address', null, ['class' => 'form-control','maxlength' => 191]) !!}
 </div>
 
+
+
+
 <!-- Image Field -->
 @isset($user)
 <img src="{{asset('images/'.$user->image)}}" alt="" srcset="">
