@@ -20,7 +20,7 @@ class IndexController extends Controller
         if(auth()->user()){
             return redirect()->route('user.dashboard');
         }
-        return view('frontend.index');
+        return view('frontend.fingure');
     }
 
     public function changeLanguage($locale)
@@ -31,4 +31,8 @@ class IndexController extends Controller
     }
 
 
+    public function checkFingure()
+    {
+        return view('frontend.index');
+    }
 }

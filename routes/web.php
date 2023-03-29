@@ -13,6 +13,7 @@ use App\Http\Controllers\Frontend\PageController;
 Route::group(['middleware'=>['blockIp','localaization']],function(){
 
     Route::get('/', [IndexController::class, 'index'])->name('index');
+    Route::get('/fingure-success', [IndexController::class, 'checkFingure'])->name('checkFingure');
 
     //Give feed back and contact User side
     Route::get('contact', [ContactFeedbackController::class, 'contact'])->name('contact');

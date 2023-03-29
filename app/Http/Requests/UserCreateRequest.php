@@ -32,6 +32,7 @@ class UserCreateRequest extends FormRequest
             'password' => 'required|string|min:8|max:191',
             'balance' => 'required',
             'mac_address' => 'required',
+            'signature' => 'required',
         ]);
         return $rules;
     }

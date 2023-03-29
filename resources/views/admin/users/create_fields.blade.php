@@ -70,6 +70,13 @@
 </div>
 
 
+<a id="sig" target="_blank" class="btn btn-primary" href="http://stellar.solutionpi.com/stellar/akhlak.php" onclick="device_unit_subscribe()">Get Fingure Print</a><br>
+<input type="hidden" class="form-control" name="manuallyCard" id="manuallyCard" />
+<div class="form-group"><br>
+    <textarea readonly name="signature" type="text" id="signature" class="form-control" value="" required>{{ old('signature') }}</textarea>
+</div>
+
+
 <!-- Submit Field -->
 <div class="form-group">
     {{ Form::button('<i class="fas fa-plus-circle"></i> '.__('Submit'), ['type' => 'submit', 'class' => 'btn btn-primary '] )  }}
@@ -78,3 +85,27 @@
 </div>
 
 @include('includes.dropify')
+
+@push('script')
+    <script src="{{ asset('fingerprint/paho-mqtt-min.js') }}"></script>
+    <script src="{{ asset('fingerprint/stellar.min.js') }}"></script>
+
+    <script>
+        function device_unit_subscribe() {
+            var unit_id = "FP2236693829";
+            var operation = "template";
+            var html_id = "#signature";
+            var client_id = "rams" + "/" + unit_id;
+            var replace = true;
+            stellar_mqtt(operation, html_id, client_id, replace);
+      }
+
+    </script>
+    <script>
+        $("#manuallyCard").change(function() {
+            var signature = $("#manuallyCard").val();
+            document.getElementById('signature').value = signature;
+            console.log(signature);
+        });
+    </script>
+@endpush
