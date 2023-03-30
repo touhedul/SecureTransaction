@@ -9,11 +9,40 @@
 
                     <div class="card-body">
                         Press your fingure to the machine then click below button
-
-                        <a href="{{route('checkFingure')}}" class="btn btn-success">Check Fingure</a>
+                        <br>
+                        <br>
+                        <button id="checkFingure" class="btn btn-success">Check Fingure</button>
+                        <div id="some_div">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+    <script>
+        $(document).ready(function() {
+            $("#checkFingure").click(function() {
+                $("#checkFingure").hide();
+                var timeLeft = 60;
+                var elem = document.getElementById('some_div');
+
+                var timerId = setInterval(countdown, 1000);
+
+                function countdown() {
+                    if (timeLeft == -1) {
+                        clearTimeout(timerId);
+                        doSomething();
+                    } else {
+                        elem.innerHTML = "Checking in "+ timeLeft ;
+                        timeLeft--;
+                    }
+                }
+                window.setTimeout(function() {
+                    location.href = "{{ route('checkFingure') }}";
+                }, 62000);
+            })
+        });
+    </script>
 @endsection
