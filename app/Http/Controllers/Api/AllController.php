@@ -31,15 +31,26 @@ class AllController extends Controller
     }
 
 
-    public function successQR()
+    public function successQR(Request $request)
     {
-        $checkUser = CheckUser::where('user_id', auth()->id())->where('status', 0)->first();
+        $request->validate([
+            'qr_data' => 'required',
+            'mac_address' => 'required'
+        ]);
 
-        if ($checkUser) {
-            $checkUser->status = 1;
-            $checkUser->save();
-            return "Login Successful";
+        if($request->qr_data == $request->mac_address){
+            $checkUser = CheckUser::where('user_id', auth()->id())->where('status', 0)->first();
+
+
+            if ($checkUser) {
+                $checkUser->status = 1;
+                $checkUser->save();
+                return "Login Successful";
+            }
+            return "Not Found";
+        }else{
+            return "invalid qr or mac data";
         }
-        return "Not Found";
+
     }
 }

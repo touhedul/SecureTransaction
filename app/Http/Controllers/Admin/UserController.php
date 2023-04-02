@@ -88,20 +88,20 @@ class UserController extends AppBaseController
         //     "signature" => "", "device_id" => "DS3356652"
         // );
 
-        $data = array(
-            "operation" => "fetch_user_list", "auth_user" => "touhedul", "auth_code"
-            => "lxb3r83z136mz87j4y36mjdchype06z"
-        );
+        // $data = array(
+        //     "operation" => "fetch_user_list", "auth_user" => "touhedul", "auth_code"
+        //     => "lxb3r83z136mz87j4y36mjdchype06z"
+        // );
 
 
-        $datapayload = json_encode($data);
-        $api_request = curl_init('https://rumytechnologies.com/rams/json_api');
-        curl_setopt($api_request, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($api_request, CURLINFO_HEADER_OUT, true);
-        curl_setopt($api_request, CURLOPT_POST, true);
-        curl_setopt($api_request, CURLOPT_POSTFIELDS, $datapayload);
-        curl_setopt($api_request, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Content-Length: ' . strlen($datapayload)));
-        return $result = curl_exec($api_request);
+        // $datapayload = json_encode($data);
+        // $api_request = curl_init('https://rumytechnologies.com/rams/json_api');
+        // curl_setopt($api_request, CURLOPT_RETURNTRANSFER, true);
+        // curl_setopt($api_request, CURLINFO_HEADER_OUT, true);
+        // curl_setopt($api_request, CURLOPT_POST, true);
+        // curl_setopt($api_request, CURLOPT_POSTFIELDS, $datapayload);
+        // curl_setopt($api_request, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Content-Length: ' . strlen($datapayload)));
+        // return $result = curl_exec($api_request);
 
 
 

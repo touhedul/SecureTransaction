@@ -17,7 +17,7 @@
 
                             <div class="col-md-6">
                                 <input id="account_number" type="account_number" class="form-control @error('account_number') is-invalid @enderror"
-                                    name="account_number" value="{{ old('account_number') }} " required autocomplete="account_number" autofocus>
+                                    name="account_number" value="{{$accountNumber}}" readonly required autocomplete="account_number" autofocus>
 
                                 {{-- @error('email')
                                 <span class="invalid-feedback" role="alert">

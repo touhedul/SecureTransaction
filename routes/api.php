@@ -20,4 +20,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::post('/login',[AllController::class,'login']);
-Route::get('/qr-scan-success',[AllController::class,'successQR'])->middleware('auth:sanctum');
+Route::post('/qr-scan',[AllController::class,'successQR'])->middleware('auth:sanctum');

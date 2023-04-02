@@ -13,11 +13,11 @@
 
                         <div class="form-group row">
                             <label for="email"
-                                class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                class="col-md-4 col-form-label text-md-right">{{ __('Account Number') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                    name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="account_number" type="account_number" class="form-control @error('account_number') is-invalid @enderror"
+                                    name="account_number" value="{{ old('account_number') }} " required autocomplete="account_number" autofocus>
 
                                 {{-- @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -63,35 +63,9 @@
                                     {{ __('Login') }}
                                 </button>
 
-                                @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                                @endif
                             </div>
                         </div>
                     </form><br>
-                    <div class="form-group row mb-0">
-                        <div class="col-md-8 offset-md-4">
-                            Don't have any account? <a href="{{ route('register') }}"> Register Here </a>
-                        </div>
-                    </div><br>
-                    <div class="pull-right">
-
-                        <a href="{{route('login.social','facebook')}}" style="display:inline" class="btn btn-primary"><i
-                                class="fa fa-facebook"></i>
-                            Login
-                            With Facebook</a>
-                        <a href="{{route('login.social','google')}}" style="display:inline" class="btn btn-danger"><i
-                                class="fa fa-google"></i>
-                            Login
-                            With Google</a>
-                        {{-- <a href="{{route('login.social','twitter')}}" style="display:inline" class="btn btn-success"><i
-                                class="fa fa-google"></i>
-                            Login
-                            With Twitter</a> --}}
-                        {{-- <a style="display:inline" class="btn btn-primary">Login With Google</a> --}}
-                    </div>
                 </div>
             </div>
         </div>
