@@ -9,5 +9,5 @@ class CheckUser extends Model
 {
     use HasFactory;
 
-    protected $fillable=['user_id'];
+    protected $fillable=['user_id','status'];
 }

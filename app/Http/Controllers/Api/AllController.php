@@ -38,19 +38,23 @@ class AllController extends Controller
             'mac_address' => 'required'
         ]);
 
-        if($request->qr_data == $request->mac_address){
-            $checkUser = CheckUser::where('user_id', auth()->id())->where('status', 0)->first();
+        if ($request->qr_data == $request->mac_address) {
+            $user = User::where('mac_address', auth()->user()->mac_address)->first();
+            if ($user) {
+                $checkUser = CheckUser::where('user_id', auth()->id())->where('status', 0)->first();
 
-
-            if ($checkUser) {
-                $checkUser->status = 1;
-                $checkUser->save();
-                return "Login Successful";
+                if ($checkUser) {
+                    $checkUser->status = 1;
+                    $checkUser->save();
+                    return response()->json("Success", 200);
+                } else {
+                    return response()->json("Invalid Login", 400);
+                }
+            } else {
+                return response()->json("Not found", 400);
             }
-            return "Not Found";
-        }else{
-            return "invalid qr or mac data";
+        } else {
+            return response()->json("invalid qr or mac data", 400);
         }
-
     }
 }

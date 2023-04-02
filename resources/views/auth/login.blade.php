@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header">{{ __('Admin Login') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -13,7 +13,7 @@
 
                         <div class="form-group row">
                             <label for="email"
-                                class="col-md-4 col-form-label text-md-right">{{ __('Account Number') }}</label>
+                                class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
 
                             <div class="col-md-6">
                                 <input id="account_number" type="account_number" class="form-control @error('account_number') is-invalid @enderror"

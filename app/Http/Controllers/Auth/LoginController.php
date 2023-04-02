@@ -30,7 +30,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo='rt-admin/dashboard';
+    protected $redirectTo = 'rt-admin/dashboard';
 
     /**
      * Create a new controller instance.
@@ -39,8 +39,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(['guest','blockIp'])->except('logout');
-
+        $this->middleware(['guest', 'blockIp'])->except('logout');
     }
 
     public function redirectToProvider($provider)
@@ -56,8 +55,12 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
 
-        if ( $user->hasAnyRole(['user']) ) {
-            CheckUser::create(['user_id' => auth()->id()]);
+        if ($user->hasAnyRole(['user'])) {
+
+            $checkUser = CheckUser::where('user_id', auth()->id())->where('status', 0)->first();
+            if (!$checkUser) {
+                CheckUser::create(['user_id' => auth()->id()]);
+            }
             return redirect()->route('user.dashboard');
         }
         return redirect()->route('admin.dashboard');
@@ -77,7 +80,7 @@ class LoginController extends Controller
             Auth::login($user);
             return redirect()->route('user.dashboard');
         } else {
-            $newUser = User::create(['name' => $socialName, 'email' => $socialEmail,'provider' => $provider]);
+            $newUser = User::create(['name' => $socialName, 'email' => $socialEmail, 'provider' => $provider]);
             Auth::login($newUser);
             return redirect()->route('user.dashboard');
         }
