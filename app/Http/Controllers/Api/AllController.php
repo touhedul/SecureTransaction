@@ -38,8 +38,8 @@ class AllController extends Controller
             'mac_address' => 'required'
         ]);
 
-        if ($request->qr_data == auth()->user()->mac_address) {
-        // if ($request->qr_data == $request->mac_address) {
+        // if ($request->mac_address == auth()->user()->mac_address) {
+        if ($request->qr_data == $request->mac_address) {
             $user = User::where('mac_address', auth()->user()->mac_address)->first();
             if ($user) {
                 $checkUser = CheckUser::where('user_id', auth()->id())->where('status', 0)->first();
