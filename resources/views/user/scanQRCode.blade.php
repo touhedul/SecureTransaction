@@ -16,7 +16,6 @@
 
                         <div class="row justify-content-center">
                             {!! QrCode::size(300)->generate(auth()->user()->mac_address) !!}
-
                         </div>
                     </div>
                 </div>

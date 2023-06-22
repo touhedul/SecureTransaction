@@ -21,7 +21,7 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('mac_address', __('IMEI')) !!}<span style="color: red">*</span>
+    {!! Form::label('mac_address', __('Phone Registration Number')) !!}<span style="color: red">*</span>
     {!! Form::text('mac_address', null, ['class' => 'form-control','required','maxlength' => 191]) !!}
 </div>
 
