@@ -8,10 +8,10 @@
                     <div class="card-header">{{ __('Validate Your Fingure') }}</div>
 
                     <div class="card-body">
-                        Press your fingure to the machine then click below button
+                        Press your finger to the machine then click below button
                         <br>
                         <br>
-                        <button id="checkFingure" class="btn btn-success">Check Fingure</button>
+                        <button id="checkFingure" class="btn btn-success">Check Finger</button>
                         <div id="some_div">
                         </div>
                     </div>

@@ -54,10 +54,10 @@ class IndexController extends Controller
         $result = json_decode($result);
         if(count($result->log) > 0){
             $accountNumber = $result->log[0]->registration_id;
-            return view('frontend.index',compact('accountNumber'))->with('success','Fingure Successful.');
+            return view('frontend.index',compact('accountNumber'))->with('success','Finger Successful.');
         }else{
 
-            return back()->with('error',"No user found. Put your fingure to the machine then try again.");
+            return back()->with('error',"No user found. Put your finger to the machine then try again.");
         }
     }
 }

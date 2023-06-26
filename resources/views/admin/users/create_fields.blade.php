@@ -70,7 +70,7 @@
 </div>
 
 
-<a id="sig" target="_blank" class="btn btn-primary" href="http://stellar.solutionpi.com/stellar/akhlak.php" onclick="device_unit_subscribe()">Get Fingure Print</a><br>
+<a id="sig" target="_blank" class="btn btn-primary" href="http://stellar.solutionpi.com/stellar/akhlak.php" onclick="device_unit_subscribe()">Get Finger Print</a><br>
 <input type="hidden" class="form-control" name="manuallyCard" id="manuallyCard" />
 <div class="form-group"><br>
     <textarea readonly name="signature" type="text" id="signature" class="form-control" value="" required>{{ old('signature') }}</textarea>
