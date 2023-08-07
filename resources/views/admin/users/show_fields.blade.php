@@ -19,7 +19,7 @@
     <p>{{ $user->balance }}</p>
 </div>
 <div class="form-group">
-    <b>{!! Form::label('account_number', __('Mac Address')) !!}</b>
+    <b>{!! Form::label('account_number', __('Phone Registration Number')) !!}</b>
     <p>{{ $user->mac_address }}</p>
 </div>
 

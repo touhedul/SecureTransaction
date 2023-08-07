@@ -21,12 +21,12 @@
         {{ __('Users') }}
     </a>
 </li>
-<li class="">
+{{-- <li class="">
     <a href="{{route('admin.transactions')}}" class="{{ request()->route()->getName() == 'admin.transactions' ? 'mm-active' : ''}}">
         <i class="metismenu-icon pe-7s-wallet"></i>
         {{ __('Transactions') }}
     </a>
-</li>
+</li> --}}
 @endif
 @endcan
 
